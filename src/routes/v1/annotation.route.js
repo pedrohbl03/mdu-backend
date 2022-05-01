@@ -8,7 +8,7 @@ const router = express.Router();
 router
   .route('/:annotationId')
   .post(validate(annotationValidation.createAnnotation), annotationController.createAnnotation)
-  .patch(validate(annotationValidation.removeAnnotation), annotationController.removeAnnotation)
+  .patch(validate(annotationValidation.removeAnnotation), annotationController.deleteAnnotation)
   .delete(validate(annotationValidation.updateAnnotation), annotationController.updateAnnotation);
 
 

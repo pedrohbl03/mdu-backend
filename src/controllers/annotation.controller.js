@@ -9,19 +9,19 @@ const createAnnotation = catchAsync(async (req, res) => {
 
 const updateAnnotation = catchAsync(async (req, res) => {
   const { id, ...rest } = req.body;
-  const annotationId = await authService.getAnnotationById(id);
+  const annotationId = await annotationService.getAnnotationById(id);
   const updateAnnotation = await annotationService.updateAnnotation(annotationId, rest);
   res.send({ updateAnnotation });
 });
 
 const deleteAnnotation = catchAsync(async (req, res) => {
   const { id } = req.body;
-  await authService.deleteAnnotationById(id);
+  await annotationService.deleteAnnotationById(id);
   res.status(httpStatus.NO_CONTENT).send();
 });
 
 module.exports = {
   createAnnotation,
   updateAnnotation,
-  deleteAnnotationById,
+  deleteAnnotation,
 };

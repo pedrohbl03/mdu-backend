@@ -1,24 +1,24 @@
 const Joi = require('joi');
 const { objectId } = require('./custom.validation')
 
-const createAnnotation = {
+const createTodo = {
   body: Joi.object().keys({
-    annotationId: Joi.string().required().email(),
+    todoId: Joi.string().required().email(),
     title: Joi.string().required().email(),
     description: Joi.string().required(),
     date: Joi.string().required(),
   }),
 };
 
-const removeAnnotation = {
+const removeTodo = {
   body: Joi.object().keys({
-    annotationId: Joi.string().required(),
+    todoId: Joi.string().required(),
   }),
 };
 
-const updateAnnotation = {
+const updateTodo = {
   params: Joi.object().keys({
-    annotationId: Joi.required().custom(objectId),
+    todoId: Joi.required().custom(objectId),
   }),
   body: Joi.object().keys({
     title: Joi.string(),
@@ -29,7 +29,7 @@ const updateAnnotation = {
 };
 
 module.exports = {
-  createAnnotation,
-  removeAnnotation,
-  updateAnnotation,
+  createTodo,
+  removeTodo,
+  updateTodo,
 };
