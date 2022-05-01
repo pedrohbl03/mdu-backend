@@ -3,11 +3,6 @@ const { toJSON } = require('./plugins');
 
 const annotationSchema = mongoose.Schema(
   {
-    annotationId: {
-      type: String,
-      required: true,
-      index: true,
-    },
     user: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'User',
@@ -21,7 +16,7 @@ const annotationSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    date: {
+    referDate: {
       type: Date,
       required: true,
     },

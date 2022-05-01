@@ -3,11 +3,6 @@ const { toJSON } = require('./plugins');
 
 const todoSchema = mongoose.Schema(
   {
-    todoId: {
-      type: String,
-      required: true,
-      index: true,
-    },
     user: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'User',
@@ -21,10 +16,10 @@ const todoSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    date: {
-      type: Date,
+    category: {
+      type: String,
       required: true,
-    },
+    }
   },
   {
     timestamps: true,

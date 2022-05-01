@@ -15,8 +15,8 @@ const updateTodo = catchAsync(async (req, res) => {
 });
 
 const deleteTodo = catchAsync(async (req, res) => {
-  const { id } = req.body;
-  await todoService.deleteTodoById(id);
+  const { todoId } = req.body;
+  await todoService.deleteTodoById(todoId);
   res.status(httpStatus.NO_CONTENT).send();
 });
 

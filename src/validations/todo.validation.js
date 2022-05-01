@@ -3,9 +3,10 @@ const { objectId } = require('./custom.validation')
 
 const createTodo = {
   body: Joi.object().keys({
-    todoId: Joi.string().required().email(),
-    title: Joi.string().required().email(),
+    user: Joi.required().custom(objectId),
+    title: Joi.string().required(),
     description: Joi.string().required(),
+    category: Joi.string().required(),
     date: Joi.string().required(),
   }),
 };

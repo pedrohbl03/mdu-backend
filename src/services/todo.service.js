@@ -1,5 +1,5 @@
 const httpStatus = require('http-status');
-const { Todo } = require('../models');
+const { Todo, User } = require('../models');
 const ApiError = require('../utils/ApiError');
 
 /**
@@ -8,6 +8,13 @@ const ApiError = require('../utils/ApiError');
  * @returns {Promise<Todo>}
  */
 const createTodo = async (todoBody) => {
+  const { user: userId } = todoBody;
+  const user = await User.findById(userId);
+  
+  if (!user) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'User not found');
+  }
+
   return Todo.create(todoBody);
 };
 
@@ -55,5 +62,5 @@ module.exports = {
   createTodo,
   getTodoById,
   updateTodo,
-  deleteAnnotationById,
+  deleteTodoById,
 };

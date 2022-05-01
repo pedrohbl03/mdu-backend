@@ -3,8 +3,8 @@ const { objectId } = require('./custom.validation')
 
 const createAnnotation = {
   body: Joi.object().keys({
-    annotationId: Joi.string().required().email(),
-    title: Joi.string().required().email(),
+    user: Joi.string().required(),
+    title: Joi.string().required(),
     description: Joi.string().required(),
     date: Joi.string().required(),
   }),
