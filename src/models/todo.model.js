@@ -25,10 +25,6 @@ const todoSchema = mongoose.Schema(
       type: Date,
       required: true,
     },
-    blacklisted: {
-      type: Boolean,
-      default: false,
-    },
   },
   {
     timestamps: true,

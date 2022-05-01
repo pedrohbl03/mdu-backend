@@ -30,9 +30,6 @@ const annotationSchema = mongoose.Schema(
       default: false,
     },
   },
-  {
-    timestamps: true,
-  }
 );
 
 // add plugin that converts mongoose to json
