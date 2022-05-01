@@ -6,7 +6,7 @@ const createAnnotation = {
     user: Joi.string().required(),
     title: Joi.string().required(),
     description: Joi.string().required(),
-    date: Joi.string().required(),
+    referDate: Joi.string().required(),
   }),
 };
 

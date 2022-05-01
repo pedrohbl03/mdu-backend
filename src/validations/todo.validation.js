@@ -13,7 +13,7 @@ const createTodo = {
 
 const removeTodo = {
   body: Joi.object().keys({
-    todoId: Joi.string().required(),
+    todo: Joi.required().custom(objectId),
   }),
 };
 

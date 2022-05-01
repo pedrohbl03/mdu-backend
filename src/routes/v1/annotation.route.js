@@ -9,7 +9,7 @@ router.post('/', validate(annotationValidation.createAnnotation), annotationCont
 
 router
   .route('/:annotationId')
-  .patch(validate(annotationValidation.removeAnnotation), annotationController.deleteAnnotation)
-  .delete(validate(annotationValidation.updateAnnotation), annotationController.updateAnnotation);
+  .patch(validate(annotationValidation.updateAnnotation), annotationController.updateAnnotation)
+  .delete(validate(annotationValidation.removeAnnotation), annotationController.deleteAnnotation);
 
 module.exports = router;

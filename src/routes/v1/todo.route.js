@@ -9,7 +9,7 @@ router.post('/', validate(todoValidation.createTodo), todoController.createTodo)
 
 router
   .route('/:todoId')
-  .patch(validate(todoValidation.removeTodo), todoController.deleteTodo)
-  .delete(validate(todoValidation.updateTodo), todoController.updateTodo);
+  .patch(/* validate(todoValidation.updateTodo), */ todoController.updateTodo)
+  .delete(/* validate(todoValidation.deleteTodo), */ todoController.deleteTodo);
 
 module.exports = router;
