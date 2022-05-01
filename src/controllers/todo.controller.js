@@ -10,8 +10,8 @@ const createTodo = catchAsync(async (req, res) => {
 const updateTodo = catchAsync(async (req, res) => {
   const { id, ...rest } = req.body;
   const todoId = await todoService.getTodoById(id);
-  const updateTodo = await todoService.updateTodo(todoId, rest);
-  res.send({ updateTodo });
+  const updatedTodo = await todoService.updateTodo(todoId, rest);
+  res.send({ updatedTodo });
 });
 
 const deleteTodo = catchAsync(async (req, res) => {

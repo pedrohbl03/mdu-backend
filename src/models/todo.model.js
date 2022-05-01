@@ -19,7 +19,7 @@ const todoSchema = mongoose.Schema(
     category: {
       type: String,
       required: true,
-    }
+    },
   },
   {
     timestamps: true,

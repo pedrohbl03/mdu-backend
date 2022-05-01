@@ -5,11 +5,11 @@ const annotationController = require('../../controllers/annotation.controller');
 
 const router = express.Router();
 
+router.post('/', validate(annotationValidation.createAnnotation), annotationController.createAnnotation);
+
 router
   .route('/:annotationId')
-  .post(validate(annotationValidation.createAnnotation), annotationController.createAnnotation)
   .patch(validate(annotationValidation.removeAnnotation), annotationController.deleteAnnotation)
   .delete(validate(annotationValidation.updateAnnotation), annotationController.updateAnnotation);
-
 
 module.exports = router;

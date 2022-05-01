@@ -10,7 +10,7 @@ const ApiError = require('../utils/ApiError');
 const createTodo = async (todoBody) => {
   const { user: userId } = todoBody;
   const user = await User.findById(userId);
-  
+
   if (!user) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'User not found');
   }
@@ -34,7 +34,7 @@ const getTodoById = async (id) => {
  * @returns {Promise<Todo>}
  */
 const updateTodo = async (todoId, updateBody) => {
-  const todo = await getAnnotationById(todoId);
+  const todo = await getTodoById(todoId);
   if (!todo) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Todo not found');
   }
@@ -50,7 +50,7 @@ const updateTodo = async (todoId, updateBody) => {
  * @returns {Promise<Todo>}
  */
 const deleteTodoById = async (todoId) => {
-  const todo = await getUserById(todoId);
+  const todo = await getTodoById(todoId);
   if (!todo) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Todo not found');
   }

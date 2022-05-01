@@ -10,8 +10,8 @@ const createAnnotation = catchAsync(async (req, res) => {
 const updateAnnotation = catchAsync(async (req, res) => {
   const { id, ...rest } = req.body;
   const annotationId = await annotationService.getAnnotationById(id);
-  const updateAnnotation = await annotationService.updateAnnotation(annotationId, rest);
-  res.send({ updateAnnotation });
+  const updatedAnnotation = await annotationService.updateAnnotation(annotationId, rest);
+  res.send({ updatedAnnotation });
 });
 
 const deleteAnnotation = catchAsync(async (req, res) => {

@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const { objectId } = require('./custom.validation')
+const { objectId } = require('./custom.validation');
 
 const createAnnotation = {
   body: Joi.object().keys({
@@ -20,11 +20,12 @@ const updateAnnotation = {
   params: Joi.object().keys({
     annotationId: Joi.required().custom(objectId),
   }),
-  body: Joi.object().keys({
-    title: Joi.string(),
-    description: Joi.string(),
-    category: Joi.string(),
-  })
+  body: Joi.object()
+    .keys({
+      title: Joi.string(),
+      description: Joi.string(),
+      category: Joi.string(),
+    })
     .min(1),
 };
 

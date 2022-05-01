@@ -43,7 +43,7 @@ const updateAnnotation = async (annotationId, updateBody) => {
  * @returns {Promise<Annotation>}
  */
 const deleteAnnotationById = async (annotationId) => {
-  const annotation = await getUserById(annotationId);
+  const annotation = await getAnnotationById(annotationId);
   if (!annotation) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Annotation not found');
   }

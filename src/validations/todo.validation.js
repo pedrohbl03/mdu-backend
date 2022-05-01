@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const { objectId } = require('./custom.validation')
+const { objectId } = require('./custom.validation');
 
 const createTodo = {
   body: Joi.object().keys({
@@ -21,11 +21,12 @@ const updateTodo = {
   params: Joi.object().keys({
     todoId: Joi.required().custom(objectId),
   }),
-  body: Joi.object().keys({
-    title: Joi.string(),
-    description: Joi.string(),
-    category: Joi.string(),
-  })
+  body: Joi.object()
+    .keys({
+      title: Joi.string(),
+      description: Joi.string(),
+      category: Joi.string(),
+    })
     .min(1),
 };
 
